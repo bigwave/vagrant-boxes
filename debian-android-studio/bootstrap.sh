@@ -3,11 +3,11 @@
 apt-get update
 apt-get -y upgrade
 
-# get ourselves some basic toys
-apt-get -y install git-core build-essential openssl libssl-dev subversion
+echo "get ourselves some basic toys"
+apt-get -y install git-core build-essential openssl libssl-dev subversion xfce4 unzip
 
-# install some tools for the vagrant user only by executing
-# a script AS the vagrant user
+echo "install some tools for the vagrant user only by executing"
+echo "a script AS the vagrant user"
 cp /vagrant/install-tools.sh /home/vagrant
 chown vagrant /home/vagrant/install-tools.sh
 chgrp vagrant /home/vagrant/install-tools.sh

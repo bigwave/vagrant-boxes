@@ -5,14 +5,14 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "steveliles/debian-7.4.0-xfce"
+  config.vm.box = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--memory", "1536"]
   end
 
-  config.vm.synced_folder "../../projects", "/home/vagrant/projects"
+  config.vm.synced_folder "../..", "/home/vagrant/projects"
 
   config.vm.provision :shell, :path => "bootstrap.sh"
 
